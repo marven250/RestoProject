@@ -1,0 +1,35 @@
+<h1 style="text-align: center">{{theUser.username}}'s Resto Profile</h1>
+
+{{#if theUser.isAdmin}}
+    <a style="color: blue" href="/adder">Add to Menu</a>
+    <a style="color: blue" href="#">Remove from Menu</a>
+{{else}}
+<div class="menu">
+  <h2>Favorites:</h2>
+  {{!-- {{#each food}} --}}
+  <div class="foodItem">
+    {{!-- <span class="title">{{this.title}}</span>
+    <div class="img"><img class="src" src='{{this.image}}'> --}}
+      {{!-- <div class="text">{{this.type}}</div>
+      <div class="text">{{this.description}}</div> --}}
+    </div>
+    <br><br>
+  </div>
+  {{!-- {{/each}} --}}
+</div>
+
+{{!-- <h3>Welcome {{theUser.username}}</h3> --}}
+
+<div class="buttoner">
+<form action="/userAdder" method="GET">
+<button style="padding: 5px">Add personal dish to favorites</button>
+</form>
+<div></div>
+<form action="/deleteMe/{{currentUser._id}}" method="GET">
+  <button style="padding: 5px">Delete My Account</button>
+</form>
+{{/if}}
+<form action="/logout" method="POST">
+<button style="padding: 5px">Log out</button>
+</form>
+</div>

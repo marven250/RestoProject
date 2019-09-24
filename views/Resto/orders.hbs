@@ -1,0 +1,30 @@
+{{#if theUser}}
+<h1 style="text-align: center">{{theUser.username}}'s Orders Page</h1>
+<div class="orders">
+<h2>Click <a style="color: blue" href="/profile">here</a> to go to your profile</h2>
+</div>
+{{else}}
+<h1 style="text-align: center">Orders/Login</h1>
+<div class="orderPage">
+  <div class="logger">
+    <form action="/login" method="POST">
+      <p>Username</p>
+      <input type="text" name="username">
+  
+      <p>Password</p>
+      <input type="password" name="password">
+      <br>
+      {{#if errorMessage }}
+      <div class="error-message">{{ errorMessage }}</div>
+      {{/if}}
+      <button style="padding: 5px">Login</button>
+      <p>Not a user? Click here to <a style="color: blue" href="/signup">sign up!</a></p>
+    </form>
+  </div>
+<h2>Take advantage of Resto restaurant's exclusive features by logging into your account! </h2>
+<br>
+{{!-- <a class="log" style="color: blue" href="/login">Login</a> --}}
+{{!-- Placing orders, favorites, wishlists, and much more! --}}
+</div>
+{{/if}}
+<p style="display: flex; justify-content: center">Resto.inc © 2019</p>

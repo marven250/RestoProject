@@ -1,0 +1,20 @@
+<h1 style="text-align: center">Resto Signup</h1>
+<div class="signup">
+<form action="/signup" method="POST">
+
+
+  <p>Username</p>
+  <input type="text" name="theUsername">
+
+  <p>Password</p>
+  <input type="password" name="thePassword">
+
+<br>
+{{#if errorMessage }}
+<div class="error-message">{{ errorMessage }}</div>
+{{/if}}
+<br>
+
+  <button>Sign Up</button>
+</form>
+</div>
