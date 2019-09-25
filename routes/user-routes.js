@@ -12,6 +12,26 @@ router.get("/adder", (req, res, next)=>{
   res.render("Users/adder")
 })
 
+router.get("/deleter", (req, res, next)=>{
+  Food.find().then(food => {
+    console.log(food)
+    res.render("Users/deleter", { food: food })
+  })
+ 
+})
+
+router.post("/deleter/:id", (req, res, next)=>{
+    const id = req.params.id
+    Food.findByIdAndDelete(id).then(fooder=>{
+      Food.find().then(food => {
+        console.log(food)
+        res.render("Users/deleter", { food: food })
+      })
+      console.log(fooder)
+    })
+
+})
+
 router.get("/deleteMe/:id", (req, res, next)=>{
   res.render("Users/affirm")
 })
@@ -42,6 +62,47 @@ router.post("/adder", (req, res, next)=>{
     })
 })
 
+router.get("/edit", (req, res, next)=>{
+  Food.find().then(food => {
+    res.render("Users/editor", { food: food })
+  })
+})
+
+router.post("/edits/:id", (req, res, next)=>{
+  const id = req.params.id
+  console.log("=========>>>>>",req.params)
+  // const {title, type, description, image} = req.body
+  // console.log({ title, type, description, image })
+
+  console.log(req.body)
+  Food.findByIdAndUpdate(id, 
+    {
+      title: req.body.title,
+      type: req.body.type,
+      description: req.body.description,
+      image: req.body.image,
+    }
+    ).then((foodd)=>{
+      console.log("sdfkjnsdfknsdkfnsdkfljnsdkfljns", foodd)
+    res.redirect("/menu")
+  }).catch((error) => {
+    console.log(error);
+  })
+})
+
+router.get("/edits/:id", (req, res, next)=>{
+  const id = req.params.id
+  Food.findById(id)
+    .then((foodd) => {
+      res.render("Users/foodEditor", {food: foodd})
+    }).catch((error) => {
+      console.log(error);
+    })
+
+
+})
+
+
 router.get("/userAdder", (req, res, next) => {
   res.render("Users/userAdder")
 })
@@ -60,9 +121,15 @@ router.post("/signup", (req, res, next)=>{
     });
     return;
   }
+  if (userName[0] !== userName[0].toUpperCase()) {
+    res.render("Users/signup", {
+      errorMessage: "Please make sure that first character of username is capitalized."
+    });
+    return;
+  }
   if (userName.length < 4 || password.length< 4) {
     res.render("Users/signup", {
-      errorMessage: "Please make sure both username password lengths are greater than 3 characters."
+      errorMessage: "Please make sure both username and password lengths are greater than 3 characters."
     });
     return;
   }

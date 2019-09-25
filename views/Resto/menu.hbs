@@ -1,9 +1,9 @@
 <h1 style="display: flex; justify-content: center; padding: 5px">Menu</h1>
 {{#if currentUser.isAdmin}}
-<form>
-<label>Delete</label>
-<input id="checks" type="checkbox">
-</form>
+
+{{!-- <label>Delete</label>
+<input id="checks" type="checkbox"> --}}
+
 <div class="menu">
 {{#each food}}
 <div id="foodItem" class="foodItem">
@@ -34,3 +34,5 @@
 </div>
 <p style="display: flex; justify-content: center">Resto.inc © 2019</p>
 {{/if}}
+
+<script src="/javascripts/scripter.js"></script>

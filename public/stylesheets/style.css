@@ -2,6 +2,9 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   margin: 0; }
 
+a:hover {
+  color: grey; }
+
 a {
   color: white;
   font-size: 1.5em;
@@ -51,7 +54,7 @@ nav {
   justify-content: center; }
 
 .about {
-  width: 100%;
+  width: 91%;
   height: 600px;
   background-color: #333; }
 
@@ -63,7 +66,7 @@ nav {
 
 #sign {
   position: relative;
-  left: 1100px;
+  left: 1000px;
   top: 100px;
   font-size: 2em; }
 
@@ -81,7 +84,7 @@ nav {
 .log:hover {
   color: blue; }
 
-.accountDelete, .orderPage, .logger, .signup, .orders {
+.accountDelete, .orderPage, .logger, .signup, .orders, .profile {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -91,6 +94,8 @@ nav {
 
 .buttoner {
   display: flex;
-  justify-content: center; }
+  justify-content: center;
+  margin-bottom: 5px;
+  padding: 5px; }
 
 /*# sourceMappingURL=style.css.map */

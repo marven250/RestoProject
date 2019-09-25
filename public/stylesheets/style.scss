@@ -3,6 +3,10 @@ body {
   margin: 0;
 }
 
+a:hover{
+  color: grey;
+}
+
 a {
   color: white;
   font-size: 1.5em;
@@ -59,7 +63,7 @@ height: 200px;
 }
 
 .about{
-  width: 100%;
+  width: 91%;
   height: 600px;
   background-color: #333;
 }
@@ -73,7 +77,7 @@ height: 200px;
 
 #sign{
   position: relative;
-  left: 1100px;
+  left: 1000px;
   top: 100px;
   font-size: 2em;
   
@@ -96,7 +100,7 @@ height: 200px;
   color: blue
 }
 
-.accountDelete, .orderPage, .logger, .signup, .orders{
+.accountDelete, .orderPage, .logger, .signup, .orders, .profile{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -107,5 +111,7 @@ height: 200px;
 
 .buttoner{
   display: flex;
-  justify-content: center
+  justify-content: center;
+  margin-bottom: 5px;
+  padding: 5px
 }

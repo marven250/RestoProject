@@ -1,0 +1,25 @@
+<div class="menu">
+  {{#each food}}
+  <div class="foodItem">
+    <span class="title">{{this.title}}</span>
+    <br>
+    <div class="img"><img class="src" src='{{this.image}}'>
+      <div class="text">{{this.type}}</div>
+      <div class="text">{{this.description}}</div>
+    </div>
+
+
+    
+    <a href="/edits/{{this._id}}">
+    
+    
+      <button
+        style="background-color: purple; border-color: black; height: 30px; position: relative; left: 120px">Edit</button>
+    
+    </a>
+
+    
+    <br><br>
+  </div>
+  {{/each}}
+</div>

@@ -1,0 +1,17 @@
+<div class="menu">
+  {{#each food}}
+  <div class="foodItem">
+    <span class="title">{{this.title}}</span>
+    <br>
+    <div class="img"><img class="src" src='{{this.image}}'>
+      <div class="text">{{this.type}}</div>
+      <div class="text">{{this.description}}</div>
+    </div>
+    <form action="/deleter/{{this._id}}" method="POST">
+    <button
+      style="background-color: red; border-color: black; height: 30px; position: relative; left: 120px">Delete</button>
+  </form>
+    <br><br>
+  </div>
+  {{/each}}
+</div>
