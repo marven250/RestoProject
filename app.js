@@ -12,9 +12,9 @@ const session = require("express-session");
 const MongoStore = require("connect-mongo")(session);
 
 
-mongoose.connect(process.env.MONGODB_URI)
 
-mongoose.connect("mongodb://heroku_xbs0rgwk:h2pfjn8agugf3ngqedc622d8nm@ds019946.mlab.com:19946/heroku_xbs0rgwk")
+
+mongoose.connect(process.env.MONGODB_URI)
   .then(x => {
     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
   })
