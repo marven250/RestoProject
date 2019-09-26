@@ -2,6 +2,8 @@ const router = require("../routes/resto")
 const User = require("../models/user")
 const Food = require("../models/food")
 const bcrypt = require("bcryptjs")
+// const express = require('express');
+// const app = express();
 
 
 router.get("/signup", (req, res, next) => {
@@ -147,6 +149,8 @@ router.post("/signup", (req, res, next)=>{
       })
 
 })
+
+// app.get('/edamam/*', proxyEdamam);
 
 router.get("/profile", (req, res, next)=>{
   if(req.session.currentUser){

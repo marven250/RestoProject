@@ -16,7 +16,20 @@
 </form>
 {{else}}
 <div class="favorites">
-  <h2>Favorites:</h2>
+  <div class="menu">
+    <h2 style="text-decoration: underline">Personal Favorites</h2>
+    {{#each food}}
+    <div class="foodItem">
+      <span class="title"><a class="titles">{{this.title}}</a></span>
+      <br>
+      <div class="img"><img class="src" src='{{this.image}}'>
+        <div class="text"><a>{{this.type}}</a></div>
+        <div class="text"><a>{{this.description}}</a></div>
+      </div>
+      <br><br>
+    </div>
+    {{/each}}
+  </div>
   {{!-- {{#each food}} --}}
   <div class="foodItem">
     {{!-- <span class="title">{{this.title}}</span>
@@ -33,7 +46,7 @@
 
 <div >
 <form class="buttoner" action="/userAdder" method="GET">
-<button class="buttons" style="padding: 5px; background-color: green; border-color: black">Add personal dish to favorites</button>
+<button class="buttons" style="padding: 5px; background-color: green; border-color: black">Add menu dish to favorites</button>
 </form>
 <div></div>
 <form class="buttoner" action="/deleteMe/{{currentUser._id}}" method="GET">

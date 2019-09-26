@@ -1,17 +1,36 @@
-<form action="/adder" method="POST">
-  <p>Name</p>
-  <input type="text" name="title">
+<div class="orderPage">
+  <form action="/adder" method="POST" class="form login">
 
-  <p>Type</p>
-  <input placeholder="Ex: Sweet Mild" type="text" name="type">
-  
-  
-  <p>Description</p>
-  <input placeholder="Ex: Juicy Hot" type="text" name="description">
+    <div class="form__field" class="logger">
+      <label for="login__username"><svg class="icon">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#user"></use>
+        </svg><span class="hidden">Username</span></label>
+      <input id="login__username" type="text" name="title" class="form__input" placeholder="Name" required>
+    </div>
 
-  <p>Image Address</p>
-  <input type="text" name="image">
+    <div class="form__field">
+      <label for="login__password"><svg class="icon">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#lock"></use>
+        </svg><span class="hidden">Password</span></label>
+      <input id="login__password" type="password" name="type" class="form__input" placeholder="Type" required>
+    </div>
 
-    <br>
-  <button>Add</button>
-</form>
+    <div class="form__field">
+      <label for="login__password"><svg class="icon">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#lock"></use>
+        </svg><span class="hidden">Password</span></label>
+      <input id="login__password" type="password" name="description" class="form__input" placeholder="Description" required>
+    </div>
+
+    <div class="form__field">
+      <label for="login__password"><svg class="icon">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#lock"></use>
+        </svg><span class="hidden">Password</span></label>
+      <input id="login__password" type="password" name="image" class="form__input" placeholder="Image Address" required>
+    </div>
+
+    <div class="form__field">
+      <input type="submit" value="Add">
+    </div>
+  </form>
+</div>

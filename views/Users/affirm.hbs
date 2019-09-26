@@ -1,10 +1,10 @@
 <h1 style="text-align: center">Are you sure you want to delete your account??</h1>
 <div class="accountDelete">
 <form action="/profile" method="GET">
-  <button style= "padding: 20px; background-color: green "> Don't delete my account!</button>
+  <button class="buttons" style= "padding: 20px; background-color: green ">No! Don't delete my account!</button>
 </form>
 <br>
 <form action="/deleteMe/{{currentUser._id}}" method= "POST">
-  <button style= "padding: 20px; background-color: red">Delete my account</button>
+  <button class="buttons" style= "padding: 20px; background-color: red">Delete my account</button>
 </form>
 </div>
