@@ -1,21 +1,21 @@
 <h1 style="text-align: center">{{theUser.username}}'s Resto Profile</h1>
 
 {{#if theUser.isAdmin}}
-<div style="height: 300px" class="profile">
-  <h1>When our competitors go 'big', we MUST go BIGGER!!"</h1>
+<div style="height: 400px" class="profile">
+  <h1 style="font-size: 3em" id="motive">When our competitors go 'big', we MUST go BIGGER!!"</h1>
 
 </div>
 <form  class="buttoner" action="/adder" method="GET">
-<button style="background-color: green; border-color: black">Add To Menu</button>
+<button class="buttons" style="background-color: green; border-color: black">Add To Menu</button>
 </form>
 <form class="buttoner" action="/edit" method="GET">
-  <button style="background-color:purple; border-color: black">Edit Menu</button>
+  <button class="buttons" style="background-color:purple; border-color: black">Edit Menu</button>
 </form>
 <form class="buttoner" action="/deleter" method="GET">
-  <button style="background-color: red; border-color: black" id="remover">Remove From Menu</button>
+  <button class="buttons" style="background-color: red; border-color: black" id="remover">Remove From Menu</button>
 </form>
 {{else}}
-<div class="menu">
+<div class="favorites">
   <h2>Favorites:</h2>
   {{!-- {{#each food}} --}}
   <div class="foodItem">
@@ -33,15 +33,15 @@
 
 <div >
 <form class="buttoner" action="/userAdder" method="GET">
-<button style="padding: 5px; background-color: green; border-color: black">Add personal dish to favorites</button>
+<button class="buttons" style="padding: 5px; background-color: green; border-color: black">Add personal dish to favorites</button>
 </form>
 <div></div>
 <form class="buttoner" action="/deleteMe/{{currentUser._id}}" method="GET">
-  <button style="padding: 5px; background-color: red; border-color: black ">Delete My Account</button>
+  <button class="buttons" style="padding: 5px; background-color: red; border-color: black ">Delete My Account</button>
 </form>
 {{/if}}
 <form class="buttoner" action="/logout" method="POST">
-<button style="padding: 5px; border-color: black">Log out</button>
+<button class="buttons" style="padding: 5px; border-color: black">Log out</button>
 </form>
 </div>
 

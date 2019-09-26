@@ -1,38 +1,17 @@
 <h1 style="display: flex; justify-content: center; padding: 5px">Menu</h1>
-{{#if currentUser.isAdmin}}
 
-{{!-- <label>Delete</label>
-<input id="checks" type="checkbox"> --}}
-
-<div class="menu">
-{{#each food}}
-<div id="foodItem" class="foodItem">
-  <span class="title">{{this.title}}</span>
-  <br>
-<div class="img"><img class="src" src='{{this.image}}'>
-  <div class="text">{{this.type}}</div>
-  <div class="text">{{this.description}}</div>
-</div>
-<br><br>
-</div>
-{{/each}}
-</div>
-<p style="display: flex; justify-content: center">Resto.inc © 2019</p>
-{{else}}
 <div class="menu">
   {{#each food}}
   <div class="foodItem">
-    <span class="title">{{this.title}}</span>
+    <span class="title"><a>{{this.title}}</a></span>
     <br>
     <div class="img"><img class="src" src='{{this.image}}'>
-      <div class="text">{{this.type}}</div>
-      <div class="text">{{this.description}}</div>
+      <div class="text"><a>{{this.type}}</a></div>
+      <div class="text"><a>{{this.description}}</a></div>
     </div>
     <br><br>
   </div>
   {{/each}}
 </div>
 <p style="display: flex; justify-content: center">Resto.inc © 2019</p>
-{{/if}}
 
-<script src="/javascripts/scripter.js"></script>

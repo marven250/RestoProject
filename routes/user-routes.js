@@ -141,7 +141,7 @@ router.post("/signup", (req, res, next)=>{
         isAdmin: false
       }).then((newUser)=>{
         console.log("////////////////", newUser)
-        res.redirect("/login")
+        res.redirect("/orders")
       }).catch((err)=>{
         next(err)
       })
@@ -152,7 +152,7 @@ router.get("/profile", (req, res, next)=>{
   if(req.session.currentUser){
     res.render("Users/profile", {theUser: req.session.currentUser})
   }else{
-    res.redirect("/login")
+    res.redirect("/orders")
   }
  
 })

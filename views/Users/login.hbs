@@ -1,5 +1,5 @@
 <h1 style="text-align: center">Resto Login</h1>
-<div class="logger">
+{{!-- <div class="logger">
 <form action="/login" method="POST">
   <p>Username</p>
   <input type="text" name="username">
@@ -13,4 +13,37 @@
   <button style="padding: 5px">Login</button>
   <p>Not a user? Click here to <a style="color: blue" href="/signup">sign up!</a></p>
 </form>
+</div> --}}
+
+<div class="orderPage">
+  {{!-- <h2>Take advantage of Resto restaurant's exclusive features by logging into your account! </h2> --}}
+  <form action="/login" method="POST" class="form login">
+
+    <div class="form__field" class="logger">
+      <label for="login__username"><svg class="icon">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#user"></use>
+        </svg><span class="hidden">Username</span></label>
+      <input id="login__username" type="text" name="username" class="form__input" placeholder="Username" required>
+    </div>
+
+    <div class="form__field">
+      <label for="login__password"><svg class="icon">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#lock"></use>
+        </svg><span class="hidden">Password</span></label>
+      <input id="login__password" type="password" name="password" class="form__input" placeholder="Password" required>
+    </div>
+
+    {{#if errorMessage }}
+    <div class="error-message">{{ errorMessage }}</div>
+    {{/if}}
+
+    <div class="form__field">
+      <input type="submit" value="Sign In">
+    </div>
+
+  </form>
+
+  <p class="subs">Not a member? <a class="logs" href="/signup">Sign up now</a> <svg class="icon">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/images/icons.svg#arrow-right"></use>
+    </svg></p>
 </div>
