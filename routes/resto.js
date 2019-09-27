@@ -9,8 +9,10 @@ router.get('/', (req, res, next) => {
 
 router.get("/menu", (req, res, next)=>{
   Food.find().then(food=>{
+    if(food.personal == null){
      console.log(food)
     res.render("Resto/menu", {food: food})
+    }
   })
   // let checker = document.getElementById("checks")
   // let food = document.getElementById("foodItem")

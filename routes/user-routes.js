@@ -2,9 +2,17 @@ const router = require("../routes/resto")
 const User = require("../models/user")
 const Food = require("../models/food")
 const bcrypt = require("bcryptjs")
-// const express = require('express');
-// const app = express();
+// const menuItems = require("../public/javascripts/scripter")
+// // const express = require('express');
+// // const app = express();
 
+// for (let i = 0; i < menuItems.length; i++) {
+//   menuItems[i].ondblClick = () => {
+//     router.get("/details", (req, res, next)=>{
+//       res.render("Resto/details")
+//     })
+//   }
+// }
 
 router.get("/signup", (req, res, next) => {
   res.render("Users/signup")
@@ -57,7 +65,8 @@ router.post("/adder", (req, res, next)=>{
       title: title,
       type: type,
       description: description,
-      image: image
+      image: image,
+      personal: null
     }).then((newFood)=>{
       console.log("============>>>>>>", newFood)
       res.redirect("/adder")
@@ -107,6 +116,35 @@ router.get("/edits/:id", (req, res, next)=>{
 
 router.get("/userAdder", (req, res, next) => {
   res.render("Users/userAdder")
+})
+
+router.get("/favorites", (req, res, next)=>{
+  res.render("Users/favorites")
+})
+
+router.post("/favorites", (req, res, next)=>{
+  Food.find().then(foodss => {
+    if(foodss.personal== req.session.currentUser.username)  res.render("Users/editor", { food: foodss })
+  })
+})
+
+router.post("/userAdder", (req, res, next)=>{
+  const title = req.body.title
+  const type = req.body.type
+  const description = req.body.description
+  const image = req.body.image
+console.log("aaaaaaaaaaaaaaaaaaaaaaaa")
+
+  Food.create({
+    title: title,
+    type: type,
+    description: description,
+    image: image,
+    personal: req.session.currentUser.username
+  }).then((newFoods) => {
+    console.log("============>>>>>>", newFoods)
+    res.redirect("/profile")
+  })
 })
 
 

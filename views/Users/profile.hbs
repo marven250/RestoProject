@@ -15,43 +15,26 @@
   <button class="buttons" style="background-color: red; border-color: black" id="remover">Remove From Menu</button>
 </form>
 {{else}}
-<div class="favorites">
-  <div class="menu">
-    <h2 style="text-decoration: underline">Personal Favorites</h2>
-    {{#each food}}
-    <div class="foodItem">
-      <span class="title"><a class="titles">{{this.title}}</a></span>
+  <div class="ab">
+    <h2  id="favoriter"><a id="wordFavoriter" href="/favorites">Personal Favorites</a></h2>
+    <div>
       <br>
-      <div class="img"><img class="src" src='{{this.image}}'>
-        <div class="text"><a>{{this.type}}</a></div>
-        <div class="text"><a>{{this.description}}</a></div>
-      </div>
-      <br><br>
-    </div>
-    {{/each}}
+      <br>
+      <form class="buttoner" action="/userAdder" method="GET">
+        <button class="buttons" style="padding: 5px; background-color: green; border-color: black">Add Personal Dish To
+          Favorites</button>
+      </form>
+      <div></div>
+      <form class="buttoner" action="/deleteMe/{{currentUser._id}}" method="GET">
+        <button class="buttons" style="padding: 5px; background-color: red; border-color: black ">Delete My Account</button>
+      </form>
   </div>
-  {{!-- {{#each food}} --}}
-  <div class="foodItem">
-    {{!-- <span class="title">{{this.title}}</span>
-    <div class="img"><img class="src" src='{{this.image}}'> --}}
-      {{!-- <div class="text">{{this.type}}</div>
-      <div class="text">{{this.description}}</div> --}}
-    </div>
-    <br><br>
-  </div>
-  {{!-- {{/each}} --}}
-</div>
+  
+
 
 {{!-- <h3>Welcome {{theUser.username}}</h3> --}}
 
-<div >
-<form class="buttoner" action="/userAdder" method="GET">
-<button class="buttons" style="padding: 5px; background-color: green; border-color: black">Add menu dish to favorites</button>
-</form>
-<div></div>
-<form class="buttoner" action="/deleteMe/{{currentUser._id}}" method="GET">
-  <button class="buttons" style="padding: 5px; background-color: red; border-color: black ">Delete My Account</button>
-</form>
+
 {{/if}}
 <form class="buttoner" action="/logout" method="POST">
 <button class="buttons" style="padding: 5px; border-color: black">Log out</button>

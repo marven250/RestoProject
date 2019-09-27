@@ -5,7 +5,8 @@ const foodSchema = new Schema({
     title: String,
     type: String,
     description: String,
-    image: String
+    image: String,
+    personal: String
 })
 
 const Food = mongoose.model("Food", foodSchema)

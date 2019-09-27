@@ -5,6 +5,14 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   margin: 0; }
 
+.affirmer:hover {
+  transition: all 1s ease;
+  border: 5px solid black; }
+
+.buttons:hover {
+  transition: all 1s ease;
+  border: 5px solid white; }
+
 #back {
   transition: all 2s ease; }
 
@@ -58,7 +66,15 @@ nav {
   background-color: #333;
   flex-wrap: wrap;
   display: flex;
-  justify-content: space-around; }
+  justify-content: space-around;
+  min-height: 400px; }
+
+.ab {
+  width: 100%;
+  height: 100%;
+  background-color: #333;
+  flex-wrap: wrap;
+  min-height: 400px; }
 
 .favorites {
   width: 100%;
@@ -67,6 +83,18 @@ nav {
   flex-wrap: wrap;
   display: flex;
   justify-content: space-around; }
+
+#wordFavoriter {
+  transition: all 1s ease; }
+
+#wordFavoriter:hover {
+  color: purple;
+  border-bottom: 5px solid black; }
+
+#favoriter {
+  display: unset;
+  position: relative;
+  left: 525px; }
 
 .foodItem {
   display: inline-block;
