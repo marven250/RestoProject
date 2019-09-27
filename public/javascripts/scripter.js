@@ -29,32 +29,49 @@ setInterval(()=>{
   quoter.style.transform = "rotateX(360deg)"
 }, 1000)
 
+let foods= document.getElementsByClassName("src")
 
 
 
-// document.getElementById("clickApi").onclick= ()=>{
-
-//   var unirest = require("unirest");
-
-//   var req = unirest("GET", "https://nutritionix-api.p.rapidapi.com/v1_1/search/cheddar%20cheese");
-
-//   req.query({
-//     "fields": "item_name,item_id,brand_name,nf_calories,nf_total_fat"
-//   });
-
-//   req.headers({
-//     "x-rapidapi-host": "nutritionix-api.p.rapidapi.com",
-//     "x-rapidapi-key": "66822c5c39msh90cfe72c5fb77eap113a2ejsn80082c0924e0"
-//   });
+  for(let i=0 ; i< foods.length; i++){
+    foods[i].onClick = ()=>{
+    console.log("ayyyyyyy")
+      console.log(this.title)
+    }
+  }
 
 
-//   req.end(function (res) {
-//     console.log(res.body);
 
-//     if (res.error) throw new Error(res.error);
+
+document.getElementById("clickApi").onclick= ()=>{
+
+  console.log('<><><><><><><><><><><><><><><><><><><')
+  axios.get('https://api.edamam.com/api/food-database/parser?ingr=%20bread&app_id=9d96839a&app_key=3b781656b4cb29e14fa769d007cc9c93').then((result)=> {
+    console.log(result.data.hints[0].food)
+    
+  })
+}
+  // var unirest = require("unirest");
+
+  // var req = unirest("GET", "https://nutritionix-api.p.rapidapi.com/v1_1/search/cheddar%20cheese");
+
+  // req.query({
+  //   "fields": "item_name,item_id,brand_name,nf_calories,nf_total_fat"
+  // });
+
+  // req.headers({
+  //   "x-rapidapi-host": "nutritionix-api.p.rapidapi.com",
+  //   "x-rapidapi-key": "66822c5c39msh90cfe72c5fb77eap113a2ejsn80082c0924e0"
+  // });
+
+
+  // req.end(function (res) {
+  //   console.log(res.body);
+
+  //   if (res.error) throw new Error(res.error);
 
     
-//   });
+//  });
 
 //   proxyEdamam()
 
@@ -78,6 +95,3 @@ setInterval(()=>{
 //   //   console.log(item)
 //   // })
 //  }
-
-
-module.exports= menuItems

@@ -2,6 +2,7 @@ const router = require("../routes/resto")
 const User = require("../models/user")
 const Food = require("../models/food")
 const bcrypt = require("bcryptjs")
+const axios = require("axios")
 // const menuItems = require("../public/javascripts/scripter")
 // // const express = require('express');
 // // const app = express();
@@ -13,6 +14,14 @@ const bcrypt = require("bcryptjs")
 //     })
 //   }
 // }
+
+
+router.get("/favorites", (req, res, next)=>{
+  Food.find({personal:req.session.currentUser.username}).then(foodss => {
+    console.log('12345678987654321234567890987654345678',req.session, foodss)
+  res.render("Users/favorites", { food: foodss })
+  })
+})
 
 router.get("/signup", (req, res, next) => {
   res.render("Users/signup")
@@ -79,6 +88,29 @@ router.get("/edit", (req, res, next)=>{
   })
 })
 
+router.get("/details", (req, res, next)=>{
+  Food.find().then(food => {
+    res.render("Resto/details", { food: food })
+  })
+})
+
+
+
+router.get("/details/:id", (req, res, next) => {
+  const id= req.params.id
+  Food.findById(id).then(food => {
+    let nameFood = food.title.split(" ")[1]
+    console.log(".........................................", nameFood)
+ axios.get(`https://api.edamam.com/api/food-database/parser?ingr=%20${nameFood}&app_id=9d96839a&app_key=3b781656b4cb29e14fa769d007cc9c93`)
+ .then((result) => {
+      console.log("--------------------------------", result.data.hints[0].food)
+  //  document.getElementById("dets").innerHTML = result.data.hints[0].food
+  res.render("Resto/detailed", { theFood: result.data.hints[0].food }) 
+    })
+  
+})
+})
+
 router.post("/edits/:id", (req, res, next)=>{
   const id = req.params.id
   console.log("=========>>>>>",req.params)
@@ -118,15 +150,8 @@ router.get("/userAdder", (req, res, next) => {
   res.render("Users/userAdder")
 })
 
-router.get("/favorites", (req, res, next)=>{
-  res.render("Users/favorites")
-})
 
-router.post("/favorites", (req, res, next)=>{
-  Food.find().then(foodss => {
-    if(foodss.personal== req.session.currentUser.username)  res.render("Users/editor", { food: foodss })
-  })
-})
+
 
 router.post("/userAdder", (req, res, next)=>{
   const title = req.body.title

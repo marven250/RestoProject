@@ -102,11 +102,12 @@ height: 200px;
 
 #wordFavoriter{
   transition: all 1s ease;
+    border-bottom: 5px solid black
 }
 
 #wordFavoriter:hover{
   color: purple;
-  border-bottom: 5px solid black
+
 }
 
 #favoriter{

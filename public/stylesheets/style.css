@@ -85,11 +85,11 @@ nav {
   justify-content: space-around; }
 
 #wordFavoriter {
-  transition: all 1s ease; }
+  transition: all 1s ease;
+  border-bottom: 5px solid black; }
 
 #wordFavoriter:hover {
-  color: purple;
-  border-bottom: 5px solid black; }
+  color: purple; }
 
 #favoriter {
   display: unset;

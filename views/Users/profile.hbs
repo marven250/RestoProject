@@ -11,6 +11,9 @@
 <form class="buttoner" action="/edit" method="GET">
   <button class="buttons" style="background-color:purple; border-color: black">Edit Menu</button>
 </form>
+<form class="buttoner" action="/details" method="GET">
+  <button class="buttons" style="padding: 5px; background-color: yellow; border-color: black">View Menu Details</button>
+</form>
 <form class="buttoner" action="/deleter" method="GET">
   <button class="buttons" style="background-color: red; border-color: black" id="remover">Remove From Menu</button>
 </form>
@@ -23,6 +26,9 @@
       <form class="buttoner" action="/userAdder" method="GET">
         <button class="buttons" style="padding: 5px; background-color: green; border-color: black">Add Personal Dish To
           Favorites</button>
+      </form>
+      <form class="buttoner" action="/details" method="GET">
+        <button class="buttons" style="padding: 5px; background-color: yellow; border-color: black">View Menu Details</button>
       </form>
       <div></div>
       <form class="buttoner" action="/deleteMe/{{currentUser._id}}" method="GET">
