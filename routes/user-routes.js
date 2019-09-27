@@ -83,13 +83,13 @@ router.post("/adder", (req, res, next)=>{
 })
 
 router.get("/edit", (req, res, next)=>{
-  Food.find().then(food => {
+  Food.find({personal: null}).then(food => {
     res.render("Users/editor", { food: food })
   })
 })
 
 router.get("/details", (req, res, next)=>{
-  Food.find().then(food => {
+  Food.find({ personal: null }).then(food => {
     res.render("Resto/details", { food: food })
   })
 })
