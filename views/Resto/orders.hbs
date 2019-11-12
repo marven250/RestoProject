@@ -5,26 +5,9 @@
 </div>
 {{else}}
 <h1 style="text-align: center">Orders/Login</h1>
-{{!-- <div class="orderPage">
-  <div class="logger">
-    <form action="/login" method="POST">
-      <p>Username</p>
-      <input type="text" name="username">
-  
-      <p>Password</p>
-      <input type="password" name="password">
-      <br>
-      {{#if errorMessage }}
-      <div class="error-message">{{ errorMessage }}</div>
-      {{/if}}
-      <button style="padding: 5px">Login</button>
-      <p>Not a user? Click here to <a style="color: blue" href="/signup">sign up!</a></p>
-    </form>
-  </div> --}}
 <div class="orderPage">
   <a style="font-size: 2em;">Take advantage of Resto restaurant's exclusive features by logging into your account!</a>
   <form action="/login" method="POST" class="form login">
-
     <div class="form__field" class="logger">
       <label for="login__username"><svg class="icon">
           <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#user"></use>
@@ -46,25 +29,16 @@
     <div class="form__field" >
       <input type="submit" value="Sign In">
     </div>
-
   </form>
-  
 
   <p class="subs">Not a member? <a class="logs" href="/signup">Sign up now</a> <svg class="icon">
       <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/images/icons.svg#arrow-right"></use>
     </svg></p>
-
-    
 </div>
-
-
 <br>
-{{!-- <a class="log" style="color: blue" href="/login">Login</a> --}}
-{{!-- Placing orders, favorites, wishlists, and much more! --}}
 </div>
 {{/if}}
 <button id="clickApi">Click for API</button>
 <p style="display: flex; justify-content: center">Resto.inc © 2019</p>
-
 
 <script src="/javascripts/scripter.js"></script>
